@@ -54,6 +54,12 @@ int main() {
 		goto err_imgui_init;
 	}
 
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\arial.ttf", 16.0f, nullptr, io.Fonts->GetGlyphRangesCyrillic());
+	}
+
+
 	if (!ImGui_ImplGlfw_InitForVulkan(glfw_window, true)) {
 		std::cerr << "Failed to initialize ImGUI GLFW backend for Vulkan renderer\n";
 		status = EXIT_FAILURE;
